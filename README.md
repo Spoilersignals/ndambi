@@ -2,6 +2,14 @@
 
 A comprehensive machine learning system for predicting stock market fluctuations using Artificial Neural Networks (ANNs) and LSTM networks. This project implements advanced time-series forecasting with multiple data sources including historical prices, technical indicators, sentiment analysis, and economic factors.
 
+---
+
+## 🚀 **NEW USER? START HERE!**
+
+**📦 [INSTALLATION.md](INSTALLATION.md)** - Complete step-by-step installation guide for new users
+
+---
+
 ## 📋 Table of Contents
 
 - [Overview](#overview)
