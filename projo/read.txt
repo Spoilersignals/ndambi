@@ -1,0 +1,470 @@
+
+KABARAK  UNIVERSITY
+
+DEPARTMENT OF COMPUTER SCIENCE & IT
+PROJECT PROPOSAL
+PROJECT TITLE; SMART STOCK-STOCK MARKET USING ARTIFICIAL NEURAL NETWORK
+JOSEPH MUIRURI
+
+
+
+
+
+ A project/Proposal submitted in partial fulfillment for the requirement of the award of Bachelor of Business Information Technology Degree of Kabarak University.
+
+AUGUST 2025
+DECLARATION
+I declare that this is my original work and has not been submitted to any institution for any 
+marking or for any given award and any other work used has been cited as required.
+
+STUDENT NAME:  NDABI JOSEPH MUIRURI                                                   REGISTRATION NUMBER: BBIT/MG/1524/09/22
+SIGN: ……………………….                                                            DATE: …………………………
+
+
+
+
+
+
+RECOMMENDATION
+This project report titled “SMART STOCK USING ARTIFICIAL NEURAL NETWORK” has been presented to me for examination and I recommend it for submission to the department in partial fulfillment of the requirements for the award of Bachelor Degree in Business Information Technology 
+
+
+JOSHUA MUTAI
+Supervisor                                                     
+
+SIGN: ……………………….                                                     DATE: ………………………………
+
+
+DEDICATION
+
+I hereby declare that this work is absolutely my own without any accepted submission to or recognition from any academic institution or organization. Also, the work has duly acknowledged and cited any external sources that were referenced or used while preparing this work in compliance with the expected academic standards. I have duly taken full responsibility for originality and integrity of this submission.
+
+
+
+
+
+
+
+
+
+
+
+
+
+ACKNOWLEDGEMENTS
+
+I hereby declare that this work is absolutely my own without any accepted submission to or recognition from any academic institution or organization. Also, the work has duly acknowledged and cited any external sources that were referenced or used while preparing this work in compliance with the expected academic standards. I have duly taken full responsibility for originality and integrity of this submission.
+
+
+
+
+ABSTRACT
+Stock market forecasting has always been challenging due to the intricacy of the factors that influence stock prices. This study uses artificial neural networks (ANNs) to attempt to predict 
+stock market fluctuations. ANNs are known for their ability to spot intricate data patterns, and 
+they have demonstrated promise in time-series prediction applications. The project involves 
+creating and assessing a predictive model using past stock price data and relevant elements like 
+economic indicators, news sentiment, and business performance measurements.
+The project follows a predetermined process, which begins with the planning and data collection. 
+Historical stock price data is combined with a number of significant indicators to create a 
+comprehensive dataset. To gather pertinent inputs for the neural network, feature selection 
+techniques are applied. The dataset is then divided into subsets for training, validation, and 
+testing to help with the development and evaluation of models. The core of the research is the development of a robust neural network architecture. The core of the research is the development of a robust neural network architecture. Hyperparameters like learning rate, batch size, 
+and network depth are carefully adjusted to enhance model performance. Overfitting is 
+especially avoided by using regularization techniques and dropout layers. The neural network is trained on the training dataset, altering internal biases and Iights iteratively to lower prediction errors. Performance monitoring on the validation set directs the training procedure to strike a balance between fitting the data and generalizing to unknown samples. The trained model is tested on the training set, and its prediction accuracy is evaluated using widely used metrics like mean squared error (MSE) and mean absolute error (MAE).It is crucial to emphasize that despite the promise of ANNs, stock market prediction is fundamentally unreliable due to unforeseen events and market dynamics. The team is aware of these issues and suggests using caution when. The neural network is trained on the training dataset, altering internal biases and Iights iteratively to prediction errors. Performance monitoring on the validation set directs the training procedure to strike a balance fitting the data and generalizing to unknown samples. The trained model is tested on the training set, and its prediction accuracy is evaluated using widely used metrics like mean squared error (MSE) and mean absolute error (MAE).
+KEYWORDS: Mean Absolute Error, Mean squared error, Artificial Neaural Network and Data Set
+
+
+
+
+
+
+
+Abbreviations
+
+ANNs – Artificial Neural Network
+
+S&P – Standard and Poor’s
+
+IBM – International Business Machine
+
+BP Network – Back Propagation network 
+
+RBF Network – remote Framebuffer network
+
+LTSM – Long-Term surveillance and Maintenance
+
+RNNs – Recurrent Neural networks
+
+CNNs – Convolutional Neural Network
+
+ARMA – Autoregressive Moving Average Model
+
+AR – Autoregressive Model
+
+MA – Moving average
+
+LIST OF FIGURES
+Figure 1 : Use case	24
+
+
+
+TABLE OF CONTENT
+DECLARATION	II
+RECOMMENDATION	III
+DEDICATION	IV
+ACKNOWLEDGEMENTS	V
+ABSTRACT	VI
+LIST OF FIGURES	VIII
+CHAPTER ONE	1
+INTRODUCTION	1
+1.1Introduction	1
+1.2 Background of the Study	1
+1.3  Problem Statement	2
+1.4 Research  Objectives	2
+1.5 Research questions	2
+1.6  Significance of the study	3
+1.8 Scope and limitation	4
+1.9 scalability	4
+CHAPTER 2	5
+Literature review	5
+2.1 Introduction	5
+2.2Theorotical review	6
+2.2.1 Behavior finance theory	6
+2.2.2 Chaos theory	6
+2.2.3 Efficient Market Theory	7
+2.3 Machine learning approaches in stock marketing prediction using ANN's	7
+2.3.1 The rise of machine learning	8
+2.4 Research gaps	8
+2.4.1 limited research in emerging economies	9
+2.4.2 Limited comparison of machine learning techniques in real world financial environment	9
+2.4.2 Ethical implication of Machine learning in smart stock assessment	10
+2.5 Transforming smart stock through advanced algorithm and machine learning	10
+2.5.1 Limitation of traditional method	10
+2.5.2 Promise of advanced algorithm	11
+2.5.3 Ethical considerations	12
+2.6 Developing AI driven tools  for real time smart stock monitoring	12
+2.6.1 The need for real time monitoring	13
+2.6.2 Capable of AI driven tools monitoring in smart stock assessment	13
+2.6.3 Benefiting of real time monitoring	14
+2.6.4 Challenges and consideration	15
+2.7 Testing machine learning model in smart stock assessment	15
+2.7.1The need for customization in smart stocking assessment .	16
+2.7.2 Methodologies for Smart stock assessment product.	16
+2.7.3 Benefits of tailoring smart stock assessment product	17
+CHAPTER 3	18
+RESEARCH  METHODOLOGY	18
+3.1Introduction	18
+3.2 Research Design	18
+3.2.1 Development methodology	19
+Development	19
+Justification for choosing Long Short Term Memory;	19
+3.3 System analysis and design	20
+Requirements gathering	21
+Observation	21
+Documents analysis	21
+Requirements analysis	22
+Functional requirements	22
+Non-functional requirements	22
+USE CASE DIAGRAM	23
+3.4.1 SYSTEM DESIGN	25
+ARCHITECTURAL DESIGN	25
+DETAILED DESIGN	25
+PROTOPYING	26
+DESIGN  SPECIFICATION	26
+REVIEW VALIDATION	27
+3.4 Research ethics	27
+REFERENCE	28
+APPENDICES	31
+Appendix A: Work Plan	31
+Appendix B : Research Budget	32
+
+
+
+
+
+
+
+
+
+
+	
+
+CHAPTER ONE
+INTRODUCTION
+1.1Introduction
+
+The stock market is important to the world economy because it gives companies a place to raise capital and investors a chance to participate in the process of Illth creation. Accurately predicting stock market behavior has long been a sought-after goal in the financial industry. It also aids traders, investors, and actuaries in maximizing their investment portfolios and effectively managing risk. Recent advances in machine learning and artificial intelligence have opened up new possibilities for predicting stock market behavior. Artificial neural networks are a useful tool for modeling and projecting complex patterns in a number of industries, including banking. As ANNs are modeled after the structure and function of the human brain, they can use historical data to make predictions about previously unknowable data.
+1.2 Background of the Study
+The goal of the study is to increase the body of knowledge in the fields of finance and actuarial science. It intends to examine the efficacy, constraints, and implications of using ANNs for stock market prediction in order to assist actuarial professionals more accurately and confidently navigate the dynamic and complex stock market environment. The application of ANNs in finance and stock market forecasting has seen a significant growth in interest in both academic and commercial research. Many have investigated the potential applications of ANNs for improving investing decision-making, stock price forecasting, and market movement analysis. The major strength of ANNs is their capacity to analyse massive volumes of data and identify interesting patterns. Stock market data is a strong choice for neural network models due to its high dimensionality and temporal correlations. Because they can automatically learn from previous data and recognize intricate relationships between input variables, ANNs can predict outcomes more precisely than conventional techniques.
+1.3  Problem Statement
+The stock market is complex and dynamic environment where prices and trends are influenced by numerous factors, including economic indicator, company performance, geopolitical events, and investor sentiment. Accurate predicting stock market behavior is a challenging task that requires sophisticated modeling modelling techniques. Tradition approaches often fall short in capturing the intricacies and nonlinear relationships inherent in the market. The lack of an accurate and reliable method for predicting stock market behavior that can provide valuable insight to actuarial professionalism in risk assessment, investment decision making, and portfolio management. The current methods used for stock market prediction often rely on simplistic model that struggle to capture the complex pattern and dynamics of the market. As a result, actuarial professionals face difficulties in accurately assessing and managing the risk associated with investment portfolios. The need for more advance technique such as ANNs, arises to overcome these challenges.
+1.4 Research  Objectives
+The major objective of this study is to explore the effectiveness and potential benefits of employing Artificial Neural Network for predicting stock market behavior
+i.To design a system that enable stock prediction using artificial neural network
+ii.To develop and implement the  ANN architecture in  forecasting prices
+iii.To test and validate the effectiveness of the system in forecasting prices
+
+ 1.5 Research questions 
+
+iv.How can we design a system that enables stock prediction using artificial neural networks (ANNs)?
+v.How can we effectively develop and implement an ANN architecture to forecast stock prices, and what specific techniques should be employed to optimize its performance?
+vi.How can we  test and validate the effectiveness of the ANN-based system in forecasting stock prices, and how can we measure its accuracy compared to traditional forecasting methods?
+ 1.6  Significance of the study 
+i.Studying stock prediction using Artificial Neural Networks (ANNs) is significant because they can uncover hidden, non-linear patterns in market data that traditional models often miss.
+ii.ANNs are well-suited for handling noisy, complex, and time-dependent stock data, unlike many classical statistical tools.
+iii.Properly trained ANNs can enhance trading strategies and improve profitability by making more accurate short-term predictions.
+iv.They reduce the need for manual feature engineering by automatically learning useful data representations from raw inputs.
+v. ANNs serve as a foundation for more advanced AI models, enabling future development in financial forecasting technologies.
+vi.Despite their strengths, ANNs are not foolproof—they are prone to overfitting, require large datasets, and can be difficult to interpret.
+vii.Overall, the study of ANNs in stock prediction is valuable for developing smarter, data-driven financial models but demands caution, skill, and continuous adaptation.
+1.7  Expected outcome  of the study
+The expected outcome of studying stock prediction using Artificial Neural Networks (ANNs) is the development of intelligent models capable of identifying complex, non-linear relationships within financial data that traditional models often fail to capture. By leveraging ANNs, especially deep learning architectures like Recurrent Neural Networks (RNNs) and Long Short-Term Memory networks (LSTMs), researchers and traders can achieve improved accuracy in forecasting stock prices and trends. These models are expected to reduce reliance on manual feature engineering by automatically learning relevant patterns from raw historical and real-time data, including technical indicators, sentiment from news or social media, and trading volumes. Additionally, the study contributes to building more adaptive, scalable, and efficient algorithmic trading systems that can potentially yield better returns. However, the outcome also includes a deeper understanding of the limitations of ANNs, such as overfitting, black-box behavior, and the need for vast amounts of quality data. Ultimately, the goal is to enhance decision-making in financial markets by using AI to gain predictive insight, while remaining aware of the risks and challenges involved.
+1.8 Scope and limitation 
+
+The scope of studying stock prediction using Artificial Neural Networks (ANNs) includes the exploration of deep learning techniques to analyze historical stock data, detect patterns, and forecast future price movements. It covers the use of various ANN architectures such as Feedforward Neural Networks, Convolutional Neural Networks (CNNs), and Recurrent Neural Networks (RNNs), particularly LSTMs, to process time series data and improve prediction accuracy. The study also extends to integrating alternative data sources like news sentiment, social media trends, and technical indicators to enhance model performance. Furthermore, it involves training and validating models using real market datasets to simulate practical trading scenarios and evaluate profitability.However, this study has several limitations. ANNs are highly sensitive to the quality and quantity of input data, making them prone to overfitting or underperformance if the data is noisy or insufficient. The models also function as black boxes, offering limited interpretability, which poses challenges in understanding how predictions are made. Additionally, stock markets are influenced by unpredictable events and irrational human behavior, which no model can fully capture. ANNs may also struggle to adapt to sudden market shifts or structural changes. Lastly, developing and tuning these models requires significant computational resources and expertise, which may not be accessible to all researchers or traders.
+1.9 scalability 
+The study of stock prediction using Artificial Neural Networks (ANNs) is highly scalable due to the flexible nature of neural network architectures and the increasing availability of computational resources and financial data. As the volume of stock market data grows—including historical prices, technical indicators, real-time trading data, and alternative sources like news and social media—ANNs can be scaled to process and learn from larger, more diverse datasets without significant restructuring of the model. Modern frameworks such as TensorFlow and PyTorch enable easy adaptation of models to handle higher-dimensional inputs, multiple stocks, or even entire market indices. Furthermore, the same ANN techniques can be extended beyond a single market or stock exchange to apply globally across different financial instruments, such as cryptocurrencies, commodities, and forex. Cloud computing and GPU acceleration also allow researchers and traders to scale their training processes to accommodate complex, deep learning models. However, while the technical infrastructure supports scalability, ensuring consistent performance across diverse markets and adapting to evolving financial conditions still requires continuous monitoring and retraining of models.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CHAPTER 2
+Literature review
+2.1 Introduction
+This chapter will employ neural networks to forecast stock prices and market movements have been made during the past 20 years. [1-5, 7-9]. The nonlinear financial market is a tremendously complex system. Variety has its own set of regulations, but there are also a lot of other things to consider, such as politics, the state of the economy, and investor 
+psychology. Given their capacity to self-organize, adapt, and gain economic knowledge from 
+prior datasets, neural networks are an effective method for forecasting stock prices and price 
+changes.The efficient market theory states that once new information becomes public, stock pricesquickly respond to it, making it hard to forecast stock market movements. For conventional investigations utilizing multiple linear regression analysis, this conclusion is valid. HoIver, if the dynamic and non-linear correlations in stock markets are demonstrated, stock prices will become predictable. Applying neural networks to financial time series analysis was motivated by this.
+2.2Theorotical review
+To dissect and evaluate how and why Artificial Neural Networks are used in stock market prediction, by examining the theories, architectures, methods, and results presented in existing academic and professional literature.
+2.2.1 Behavior finance theory
+l Finance Theory supports the idea that human irrationality is not just noise — it's data, and neural networks are the tools to decode it.Behavioral Finance Theory challenges the traditional notion that markets are fully rational and efficient. Instead, it argues that psychological factors — such as fear, greed, overconfidence, herd behavior, and cognitive biases — significantly influence investor decisions, often leading to irrational market movements. These behavioral patterns create predictable anomalies in the stock market, such as overreactions, underreactions, or speculative bubbles, which deviate from what pure financial models would expect. In the context of Artificial Neural Networks (ANNs), Behavioral Finance Theory provides a compelling justification for incorporating non-traditional data sources like news sentiment, social media trends, and trading volumes into predictive models. ANNs excel at identifying subtle, nonlinear patterns in large datasets, which makes them well-suited to detect the emotional and psychological signals embedded in market behavior. For example, sudden spikes in negative sentiment on Twitter may precede a stock sell-off — something an ANN can learn and act on faster than any human. By modeling these irrational yet repetitive investor behaviors, ANNs can be used to forecast price movements more effectively than traditional models that assume rationality. Thus, Behaviora
+2.2.2 Chaos theory
+Chaos Theory suggests that complex systems like the stock market, while appearing random and unpredictable, actually follow deterministic rules that produce nonlinear and chaotic behavior. This means that small changes in initial conditions can lead to drastically different outcomes — a concept known as the "butterfly effect." In financial markets, this translates to extreme sensitivity to tiny fluctuations in variables like news, investor sentiment, or global events. Although this complexity makes prediction difficult using traditional linear models, Artificial Neural Networks (ANNs) are particularly well-suited to handle such chaotic systems. ANNs can model nonlinear relationships and uncover hidden patterns in noisy financial time series data. For example, recurrent neural networks (RNNs) or Long Short-Term Memory (LSTM) networks are capable of learning time-dependent patterns in historical price data that may reflect the underlying dynamics of a chaotic system. Chaos Theory, therefore, supports the use of ANNs in stock market prediction by framing the market as a system that is not random, but deterministic and sensitive, requiring sophisticated models to detect structure within the apparent disorder. In essence, while the market may look unpredictable on the surface, ANNs can help detect the deep patterns of chaos lurking beneath it.
+2.2.3 Efficient Market Theory
+ Therefore, while EMH serves as a theoretical boundary — suggesting the limits of predictability  the success of ANN-based predictions in various studies indicates that markets may not be perfectly efficient, and there are exploitable patterns for intelligent models to learn from.The Efficient Market Hypothesis (EMH) is a financial theory that asserts stock prices fully reflect all available information at any given time, making it impossible to consistently outperform the market through prediction or analysis. 
+2.3 Machine learning approaches in stock marketing prediction using ANN's
+Stock market prediction using machine learning has gained massive traction due to the ability of models to capture non-linear patterns in complex, volatile environments. Among the most powerful tools in this field are Artificial Neural Networks (ANNs), which are inspired by the structure of the human brain and excel at modeling relationships that are too complicated for traditional mathematical models. ANNs are used to predict future stock prices or trends by learning from historical data, which typically includes stock prices (open, close, high, low), volume, technical indicators like Moving Averages or RSI, and sometimes even sentiment data extracted from news or social media.Several types of neural networks are commonly applied. Feedforward Neural Networks (FNNs) are the simplest form and can be used for regression or classification, but they lack the memory required for time-series forecasting. Recurrent Neural Networks (RNNs), and more effectively their improved versions like Long Short-Term Memory networks (LSTMs), are better suited for financial time-series because they maintain memory of past data, which is crucial for stock prediction. Convolutional Neural Networks (CNNs) are also used, often in hybrid setups, to extract spatial features or patterns from technical indicator maps or transformed time-series data. A particularly effective strategy is combining CNNs and LSTMs into a hybrid model, where CNN handles pattern recognition and LSTM captures temporal dependencies, leading to improved prediction accuracy.
+2.3.1 The rise of machine learning 
+The rise of machine learning in stock market prediction has revolutionized the way investors and analysts interpret financial data, with Artificial Neural Networks (ANNs) emerging as one of the most impactful tools in this transformation. Traditional methods of forecasting stock prices often relied on linear models and assumptions that failed to capture the complex, non-linear, and volatile nature of financial markets. Machine learning, especially through ANNs, has changed the game by enabling systems to learn intricate patterns and hidden relationships within vast historical datasets—without relying on rigid mathematical formulas.ANNs are particularly powerful because they mimic the way the human brain processes information, making them well-suited for modeling the chaotic behavior of stock prices. As computing power and access to big financial data have grown, so has the ability to train deeper and more accurate neural network models. These networks take into account a variety of input features—such as past stock prices, trading volume, technical indicators, and even news sentiment—and learn how these features interact to influence future movements. Unlike traditional models, ANNs adapt to changing market conditions and can model non-linear dependencies that are impossible for simpler methods to capture.
+2.4 Research gaps
+Despite the significant progress made in applying Artificial Neural Networks (ANNs) to stock market prediction, several research gaps still limit their full potential. One of the primary gaps lies in model interpretability—ANNs often function as "black boxes," offering high accuracy but little explanation for their predictions, which is problematic in finance where transparency is critical. Additionally, many models are trained and evaluated on historical data in controlled environments, failing to account for real-world market noise, regime shifts, and sudden macroeconomic events that drastically impact prices. Another major gap is generalizability; models that perform well on one stock or index often fail to replicate that success on others due to varying market behaviors, volatility patterns, and trading volumes. There's also a lack of standardization in feature selection and preprocessing, which causes inconsistent results and makes it hard to compare models objectively. Moreover, data limitations, such as the underutilization of real-time news, sentiment, or alternative data (like social media or geopolitical signals), leave room for improvement in capturing market psychology. Lastly, most research focuses on short-term prediction, while long-term forecasting using ANNs remains underexplored, largely due to the increased uncertainty and complexity over time. Bridging these gaps would not only improve predictive accuracy but also increase the reliability and practical adoption of ANN-based systems in real-world trading environments.
+2.4.1 limited research in emerging economies
+Limited research in emerging economies refers to the low level of academic and scientific investigation taking place in nations that are still developing or transitioning into more industrialized economies. This issue arises from several interconnected factors. Firstly, there is a significant lack of funding, as governments in these regions often prioritize essential services like healthcare, infrastructure, and education over research and development. Additionally, research institutions in these countries tend to be underdeveloped, with limited access to modern laboratories, skilled personnel, and digital tools
+Justification;The justification for the limited research in emerging economies is rooted in a combination of structural, economic, and institutional challenges that hinder the growth of a robust research culture. One of the primary reasons is the chronic underfunding of research and development, as many governments in these regions face pressing demands to allocate scarce resources to more immediate needs like healthcare, basic education, and infrastructure.
+2.4.2 Limited comparison of machine learning techniques in real world financial environment 
+In real-world financial environments, there is a limited comparative analysis of various machine learning techniques for stock market prediction, with an over-reliance on Artificial Neural Networks (ANNs). While ANNs are widely used due to their ability to model nonlinear relationships and patterns in time-series data, the lack of rigorous, side-by-side comparisons with other models like Support Vector Machines (SVM), Random Forests, Gradient Boosting, or LSTM networks presents a major limitation
+Justification;The limited comparison of machine learning techniques, especially in stock market prediction using Artificial Neural Networks (ANNs), is primarily justified by practical, technical, and resource-related constraints. First, real-world financial data is often noisy, non-stationary, and subject to unpredictable external influences, making it difficult to design standardized benchmarks for fair comparison among models. Researchers and institutions frequently default to ANNs due to their proven ability to capture nonlinear patterns, despite the presence of other potentially more effective models.
+2.4.2 Ethical implication of Machine learning in smart stock assessment 
+The use of machine learning (ML) in smart stock assessment introduces several ethical implications, particularly regarding market fairness, transparency, data privacy, manipulation risks, and accountability. One major concern is algorithmic bias—ML models trained on biased or incomplete historical data may reinforce existing inequalities or favor certain market participants (e.g., institutional investors over retail traders). The lack of transparency or "black-box" nature of many ML models, especially deep learning ones, makes it difficult for users, regulators, and even developers to understand how predictions are made, which raises questions of trust and accountability. Moreover, insider knowledge and data advantages—where firms with access to exclusive datasets or high-frequency trading infrastructure can leverage ML to manipulate micro-trends—undermine the principle of a level playing field in financial markets
+Justification;These ethical concerns are justified by the high stakes and real-world consequences of financial decision-making. Markets directly impact economies, livelihoods, and social stability. When ML systems are opaque, biased, or easily exploitable, they can mislead investors, create systemic risks, and erode public trust in financial institutions. The concentration of technological and data power in a few hands increases inequality and reduces democratic access to financial growth.
+2.5 Transforming smart stock through advanced algorithm and machine learning 
+The stock market is a complex, dynamic, and non-linear system influenced by numerous factors—economic indicators, market sentiment, geopolitical events, and even social media trends. Traditional statistical methods often fall short in capturing these complexities. This is where Artificial Neural Networks (ANNs) step in, mimicking the human brain’s ability to detect patterns and adapt to changing data environments.Advanced algorithms integrated with ANNs push stock market prediction capabilities beyond classical models like ARIMA or linear regression.
+2.5.1 Limitation of traditional method
+Traditional stock market prediction methods, such as linear regression, ARIMA (AutoRegressive Integrated Moving Average), and exponential smoothing, suffer from several critical limitations when applied to the highly dynamic and non-linear nature of financial markets. Firstly, these models typically rely on the assumption of linearity and stationarity, which rarely holds true in real-world financial time series. Stock prices are inherently non-linear and often non-stationary due to the influence of a wide range of external, unpredictable factors such as economic policy changes, investor sentiment, and geopolitical events (Atsalakis & Valavanis, 2009). ARIMA models, for example, require data transformation to achieve stationarity, which can result in the loss of important long-term trends or cycles (Zhang, Eddy Patuwo, & Hu, 1998). Additionally, traditional models struggle with capturing complex multivariate dependencies; they are typically limited to univariate or simple multivariate inputs, failing to leverage the rich information from technical indicators, macroeconomic variables, and high-frequency data (Chen, Leung, & Daouk, 2003).Another significant drawback is that traditional methods lack memory or temporal context. They analyze each time step independently and cannot recognize long-term dependencies or temporal relationships within data sequences. This is a major disadvantage in financial forecasting, where historical context often plays a crucial role (Nelson, Illingworth, & Jerram, 1999). Moreover, these models are static by design and require complete retraining when new data becomes available, making them inflexible in fast-changing markets. They also exhibit poor performance in environments with high levels of noise and volatility, as they tend to overfit or misinterpret random fluctuations as meaningful trends (Kim, 2003).
+2.5.2 Promise of advanced algorithm 
+Advanced algorithms—particularly those based on machine learning (ML), deep learning (DL), and artificial neural networks (ANNs)—offer transformative potential in stock market prediction by addressing the limitations of traditional models and introducing powerful pattern-recognition capabilities. These algorithms are adept at modeling the non-linear, non-stationary, and chaotic nature of financial time series. Neural networks, especially deep architectures like Long Short-Term Memory (LSTM) and Convolutional Neural Networks (CNNs), have shown significant promise in capturing both short- and long-term dependencies in stock data (Fischer & Krauss, 2018). Moreover, hybrid approaches that combine ANN with optimization algorithms such as genetic algorithms (GA), particle swarm optimization (PSO), and Bayesian optimization can improve prediction accuracy by automatically fine-tuning model parameters and avoiding local minima during training (Kumar & Thenmozhi, 2006). These models can integrate multiple data streams—including technical indicators, macroeconomic variables, and even unstructured data like financial news or social media sentiment—making them highly adaptable and context-aware (Hu et al., 2018).Furthermore, advanced deep learning models such as Transformers and attention-based mechanisms have brought cutting-edge improvements in learning temporal and contextual relevance, pushing beyond the limitations of recurrent models. The flexibility and adaptability of these algorithms allow for real-time learning, online updates, and scalable predictions, which are essential for algorithmic trading and high-frequency environments. The promise of these algorithms is not just in forecasting price movements but in predicting market volatility, trend reversals, and risk factors, thereby enabling more informed and intelligent trading strategies.
+2.5.3 Ethical considerations 
+The integration of advanced algorithms and artificial neural networks (ANNs) in stock market prediction introduces not only technical challenges but also significant ethical concerns. One major issue is the lack of transparency and explainability in many AI models—especially deep learning systems like LSTMs and Transformers—which often function as "black boxes," making it difficult for users and regulators to understand the decision-making process (Guidotti et al., 2018). This opacity can lead to unaccountable trading decisions, particularly when used in high-frequency trading or large-scale institutional investment systems. Another ethical dilemma is the unfair advantage these systems can provide to those with access to massive computing resources and exclusive data feeds, potentially widening the gap between institutional and retail investors (Binns, 2018). This creates an uneven playing field and challenges the principles of market fairness and integrity.Moreover, AI systems trained on historical financial data may inadvertently amplify existing market biases or contribute to feedback loops, where their predictions influence market behavior in a self-fulfilling manner (Bordeleau, 2020). The use of sentiment analysis from social media introduces further risks, as algorithms may rely on misinformation, manipulation, or emotionally charged content, raising concerns about the ethical use of unverified public data (Jung et al., 2021). Privacy is also a critical concern—especially when algorithms scrape and process data from individuals' online behavior without explicit consent. Finally, automation at scale could lead to job displacement in finance and trading sectors, raising broader questions about the social impact and responsibility of deploying such technologies (Cath, 2018).
+2.6 Developing AI driven tools  for real time smart stock monitoring
+The stock market operates in real time, influenced by countless variables ranging from global economics to news sentiment. Traditional prediction models lack the agility to react instantly and accurately. This opens the door for AI-driven tools powered by Artificial Neural Networks (ANNs) to deliver real-time, intelligent, and adaptive stock market predictions. By embedding monitoring mechanisms within ANN architectures, these tools evolve beyond static prediction and become live, learning decision systems.
+2.6.1 The need for real time monitoring 
+
+The integration of real-time monitoring into AI-driven stock market prediction systems is essential due to the highly dynamic, non-stationary, and time-sensitive nature of financial markets. Markets are continuously influenced by unpredictable events—such as geopolitical tensions, policy changes, and investor sentiment—which can lead to rapid structural shifts in data distributions, a phenomenon known as concept drift (Lu et al., 2019). Without real-time monitoring, AI models—especially those relying on artificial neural networks (ANNs)—can become outdated, producing inaccurate or even misleading predictions. Continuous monitoring allows for the early detection of model degradation, ensuring the system can retrain or recalibrate itself to maintain prediction reliability (Gama et al., 2014). Moreover, in high-frequency and algorithmic trading, where decisions are executed in microseconds, latency and performance lag can result in substantial financial losses (Aldridge, 2013). Real-time monitoring ensures low-latency data pipelines, integrity of data feeds, and accurate synchronization between inputs and predictions. It also enhances transparency and accountability, enabling better model interpretability and compliance with financial regulations (Doshi-Velez & Kim, 2017). Ultimately, without a robust monitoring framework, even the most sophisticated ANN-based prediction tools risk failure in a live trading environment, where adaptation and rapid responsiveness are critical to maintaining financial and operational edge.
+2.6.2 Capable of AI driven tools monitoring in smart stock assessment 
+AI-driven tools, especially those based on artificial neural networks (ANNs), offer transformative capabilities for stock market prediction. By mimicking the structure and function of the human brain, neural networks can learn from vast amounts of data and uncover hidden, nonlinear patterns that traditional statistical methods often miss (Fischer & Krauss, 2018). These systems can process and integrate multivariate time-series data, including price fluctuations, technical indicators, and sentiment signals, to predict market behavior with high accuracy (Hu et al., 2018). Neural architectures like Long Short-Term Memory (LSTM) and Convolutional Neural Networks (CNN) allow for capturing both sequential dependencies and spatial-temporal correlations in financial datasets (Selvin et al., 2017).Key capabilities of AI driven tools;
+I. Advanced Temporal Pattern Recognition
+ Neural networks like LSTM excel at identifying time-dependent patterns in financial sequences, improving forecasting accuracy (Fischer & Krauss, 2018).
+II. Multimodal Data Fusion
+ANNs can integrate diverse data sources—prices, volumes, social sentiment, and economic indicators—into a cohesive decision framework (Hu et al., 2018).
+III. Real-Time Adaptive Learning
+With online and reinforcement learning, neural models continually retrain on live market data, adapting to concept drift and sudden market changes (Zhang et al., 2020).
+IV. Autonomous Execution and Optimization
+ AI tools can autonomously execute trades and rebalance portfolios based on real-time predictions, reducing human intervention and latency (Selvin et al., 2017).
+2.6.3 Benefiting of real time monitoring 
+Real-time monitoring provides crucial support for neural network-based financial prediction systems by ensuring adaptive performance, data integrity, and predictive reliability in the ever-fluctuating stock market. Financial data streams are prone to concept drift, where statistical properties change over time, leading to model degradation if not addressed (Lu et al., 2019).The benefits include;
+I. Continuous Model Adaptation
+ Enables dynamic retraining or weight adjustment in ANNs to respond to concept drift and market regime shifts (Lu et al., 2019).
+II. Early Anomaly Detection
+ Identifies outliers and irregular behavior (e.g., flash crashes, fake data) that could mislead unmonitored models (Zliobaite et al., 2016).
+III. Latency Reduction and Rapid Feedback
+Maintains low-latency data flow and prediction feedback, improving reaction speed in fast-paced market environments (Gama et al., 2014).
+IV. Transparency and Regulatory Compliance
+ Supports explainability, model traceability, and audit readiness—key for deploying neural models in regulated financial domains (Doshi-Velez & Kim, 2017).
+2.6.4 Challenges and consideration 
+While AI-driven stock prediction systems powered by artificial neural networks (ANNs) offer exceptional potential, their deployment comes with significant challenges and critical considerations. One of the primary obstacles is the issue of overfitting, where models may perform well on historical data but fail in live market environments due to high noise and low signal ratios in financial data (Fischer & Krauss, 2018).Challenges and consideration are ;
+I. Overfitting and Poor Generalization
+Neural models often capture noise rather than signal in volatile financial data, reducing live performance (Fischer & Krauss, 2018).
+II. Real-Time Data Dependency
+ Predictive accuracy hinges on high-frequency, low-latency data feeds—delays or noise can destabilize outputs (Aldridge, 2013).
+III. Lack of Interpretability
+ANN models often function as "black boxes," making it difficult to audit or explain predictions to regulators or investors (Doshi-Velez & Kim, 2017).
+IV. Regulatory, Ethical, and Privacy Concerns
+ Compliance with financial laws, GDPR, and ethical AI use (e.g., avoiding market manipulation or biased decisions) must be embedded from design stage (Petrini et al., 2020).
+2.7 Testing machine learning model in smart stock assessment 
+The integration of artificial neural networks (ANNs) into stock market prediction models has transformed traditional forecasting methods by enabling systems to learn from complex, nonlinear patterns in financial data. As financial markets become increasingly dynamic and data-driven, the importance of rigorously testing machine learning models has grown to ensure reliability, scalability, and real-world applicability. ANNs, inspired by the architecture of the human brain, can detect intricate relationships among variables such as price movements, trading volume, news sentiment, and macroeconomic indicators—making them ideal for smart stock prediction systems. However, the efficacy of these models is highly dependent on their training, validation, and continuous testing across various market conditions to avoid overfitting and to ensure generalization. By applying robust testing frameworks—such as cross-validation, walk-forward analysis, and live paper trading—researchers and practitioners can assess a model's performance not only in terms of accuracy but also adaptability, latency, and decision-making quality. This paper focuses on evaluating how artificial neural networks perform under real-time testing environments, shedding light on their predictive power, limitations, and potential for shaping the next generation of intelligent financial systems.
+2.7.1The need for customization in smart stocking assessment .
+The need for customization in artificial neural network (ANN)-based stock prediction systems is critical due to the unique characteristics of financial markets, individual trading strategies, and data profiles. A "one-size-fits-all" model often fails to generalize effectively across different market sectors, timeframes, or asset classes. Customization allows the tuning of model architecture, feature selection, hyperparameters, and learning strategies to specific trading objectives—whether it’s high-frequency intraday trading or long-term investment forecasting (Zhang et al., 2020). Moreover, financial time-series data exhibit non-stationarity, meaning patterns and statistical properties shift over time, necessitating models that are not just adaptive but tailored to specific use cases (Nelson et al., 2017). Customization also supports the incorporation of domain-specific knowledge, such as integrating macroeconomic indicators for equity markets or technical analysis signals for cryptocurrencies. Additionally, user-defined risk tolerance, regulatory constraints, and explainability requirements vary across institutions, reinforcing the need for bespoke AI solutions rather than generalized models (Goodfellow et al., 2016). Without customization, neural networks may either overfit irrelevant signals or underperform due to poor alignment with the target domain, leading to both financial and operational inefficiencies.
+2.7.2 Methodologies for Smart stock assessment product.
+Customizing artificial neural network (ANN) models for stock market prediction involves the strategic adaptation of model architecture, training mechanisms, and data preprocessing techniques to suit the specific nuances of financial datasets and user objectives. Unlike static models, which often underperform across varying market conditions, tailored neural architectures allow developers to optimize performance by aligning with the temporal, structural, and behavioral aspects of the targeted financial instrument or strategy. For instance, choosing between feedforward, recurrent, or convolutional neural networks depends heavily on the nature of the time-series data and desired forecasting window (Zhang et al., 2020).The Methodologies of tailoring smart stock assessment product include ;
+I. Architecture Selection and Modification
+ Choosing suitable neural types (e.g., LSTM for sequence memory, CNN for pattern detection) based on the specific nature of financial time-series data.
+II. Feature Engineering and Domain Integration
+Incorporating technical, fundamental, and sentiment-driven indicators to enrich the input layer and reduce noise sensitivity.
+III. Training and Validation Techniques
+Applying walk-forward testing, cross-validation, and early stopping to prevent overfitting and simulate real-market performance scenarios.
+IV. Hyperparameter and Learning Rate Tuning
+Customizing the learning schedule, batch size, activation functions, and regularization methods for optimized convergence.
+2.7.3 Benefits of tailoring smart stock assessment product 
+Tailoring artificial neural network (ANN) models for stock prediction offers significant benefits by enhancing predictive accuracy, improving model generalization, and aligning system outputs with specific financial objectives. Customization allows models to be fine-tuned for particular assets, timeframes, or market conditions—resulting in more context-aware and noise-resilient predictions (Fischer & Krauss, 2018). By engineering domain-specific features such as sentiment data, macroeconomic indicators, or volatility indices, tailored models can better capture the latent patterns and dependencies relevant to the target financial instrument (Zhang et al., 2020). Furthermore, adapted architectures—such as Long Short-Term Memory (LSTM) for sequential patterns or Convolutional Neural Networks (CNNs) for trend extraction—allow models to exploit the structural characteristics of market data more efficiently (Selvin et al., 2017). Tailored training procedures, including walk-forward validation and hyperparameter tuning, also reduce the risk of overfitting and improve robustness across different trading environments (Nelson et al., 2017). Ultimately, the strategic customization of neural models enables intelligent systems to deliver more reliable, flexible, and interpretable results that are essential for real-world stock prediction applications.
+
+CHAPTER 3
+RESEARCH METHODOLOGY
+3.1Introduction 
+This research will aims to develop and evaluate artificial neural network (ANN)-based models tailored for smart stock market prediction, emphasizing real-time data integration, customization, and dynamic performance monitoring. To accomplish this, a structured research methodology is adopted that blends quantitative analysis with computational experimentation, enabling robust model development grounded in empirical evidence (Shmueli & Koppius, 2011). The methodology employs a data-driven algorithmic framework, aligning with best practices in financial machine learning to ensure predictive validity under real-world market volatility (Chong et al., 2017).
+3.2 Research Design
+This research aims to develop and evaluate artificial neural network (ANN)-based models tailored for smart stock market prediction, emphasizing real-time data integration, customization, and dynamic performance monitoring. To accomplish this, a structured research methodology is adopted that blends quantitative analysis with computational experimentation, enabling robust model development grounded in empirical evidence (Shmueli & Koppius, 2011). The methodology employs a data-driven algorithmic framework, aligning with best practices in financial machine learning to ensure predictive validity under real-world market volatility (Chong et al., 2017).The research design is build for;
+I. To develop tailored artificial neural network (ANN) architectures such as LSTM, CNN, and FNN suitable for financial time-series prediction (Nelson et al., 2017; Selvin et al., 2017);
+II. To preprocess and integrate diverse financial data sources, including technical indicators, sentiment metrics, and macroeconomic variables for optimal input representation (Fischer & Krauss, 2018; Zhang et al., 2020);
+III. To implement robust training and validation strategies like cross-validation and walk-forward analysis to enhance generalizability and reduce overfitting (Shmueli & Koppius, 2011; Gama et al., 2014);
+IV. To enable real-time prediction and adaptive retraining mechanisms to address market volatility and concept drift (Gama et al., 2014; Tsantekidis et al., 2017)
+V. To benchmark the customized ANN models against traditional forecasting techniques, demonstrating improvements in accuracy, responsiveness, and robustness (Chong et al., 2017; Patel et al., 2015).
+3.2.1 Development methodology 
+Development 
+Long Short-Term Memory (LSTM) is a type of Recurrent Neural Network (RNN) specifically designed to learn and remember patterns over long sequences of data, making it ideal for time-series prediction tasks such as stock market forecasting. Unlike traditional RNNs, LSTMs use gates (input, forget, and output gates) to control the flow of information, which helps them overcome problems like vanishing or exploding gradients and enables them to retain relevant information over time (Hochreiter & Schmidhuber, 1997). Their ability to capture temporal dependencies and long-term patterns makes LSTMs particularly effective in modeling financial markets, where historical trends heavily influence future prices.
+Justification for choosing Long Short Term Memory;
+I. LSTM networks are designed to retain long-term dependencies through memory cells and gating mechanisms, which makes them ideal for sequential data like stock prices where past behavior influences future trends (Hochreiter & Schmidhuber, 1997).
+II. LSTMs overcome the vanishing gradient problem that limits traditional RNNs, allowing them to model complex and non-linear patterns found in financial markets (Gers, Schmidhuber & Cummins, 2000).
+III. Empirical studies have demonstrated that LSTM models outperform traditional machine learning models (e.g., SVM, ARIMA) and basic ANN architectures in predicting stock price movements (Fischer & Krauss, 2018).
+IV. LSTMs are highly adaptable for real-time forecasting applications, enabling dynamic model updates and integration into automated trading systems (Chong, Han & Park, 2017).
+Iterative process
+I. Data Acquisition: Collect historical stock data, including open, high, low, close prices, volume, and macroeconomic indicators to build a comprehensive dataset (Fischer & Krauss, 2018).
+II. Preprocessing and Feature Engineering: Normalize data, remove outliers, and generate derived features such as moving averages, RSI, and MACD to improve model input quality (Patel et al., 2015).
+III. Model Construction: Design an appropriate LSTM architecture—selecting the number of layers, neurons, activation functions, and optimizers such as Adam or RMSprop (Nelson et al., 2017).
+IV. Training and Validation:
+ Train the model on historical data using loss functions like MSE, while validating with techniques such as walk-forward or k-fold validation to avoid overfitting (Shmueli & Koppius, 2011).
+V. Evaluation and Tuning: Analyze performance using metrics like RMSE, MAE, or directional accuracy, then iteratively tune hyperparameters or adjust features to enhance model accuracy (Chong et al., 2017).
+VI. Deployment and Monitoring: Implement the model into a real-time environment with continuous data feeding and retraining to adapt to concept drift and market changes (Gama et al., 2014).
+
+3.3 System analysis and design 
+System analysis and system design are two fundamental phases in the software development lifecycle that work together to ensure a system meets its intended goals. System analysis involves examining the existing processes, identifying user requirements, and understanding the system's functional and non-functional needs to uncover inefficiencies or gaps (Kendall & Kendall, 2014). Once these requirements are clearly defined, system design translates them into a technical blueprint, outlining the system architecture, data flow, interface layouts, and technology stack needed to implement the solution effectively (Sommerville, 2016). Together, these stages form the backbone of structured system development, ensuring accuracy, efficiency, and user-centered design.
+Requirements gathering 
+Observation 
+In the context of stock market prediction using Artificial Neural Networks (ANNs), observation serves as a crucial technique for gathering accurate and nuanced system requirements. By observing financial analysts, traders, and data scientists as they interact with existing forecasting tools, dashboards, and real-time data feeds, system developers can identify practical needs, usability challenges, and performance expectations that may not be explicitly stated during interviews or surveys. For instance, observing how users respond to delayed data processing or inaccurate predictions can highlight the need for real-time computation, user-friendly visualizations, or error handling mechanisms in the ANN system. This method also uncovers implicit behaviors—such as analysts’ reliance on specific indicators like RSI, MACD, or sentiment scores—which can inform feature selection and interface design. As Avison and Fitzgerald (2006) explain, observation captures the "real world" usage context, making it particularly valuable for developing systems that must operate efficiently in dynamic, high-stakes environments like financial markets.
+Documents analysis 
+Document analysis is a vital technique in requirements gathering that involves reviewing existing documentation such as user manuals, system specifications, policy documents, financial reports, and software logs to extract relevant information about current processes and system expectations. In the development of stock market prediction systems using Artificial Neural Networks (ANNs), document analysis helps uncover historical patterns, regulatory constraints, and previously defined business logic that influence prediction algorithms.
+Requirements analysis 
+Functional requirements 
+The functional requirements of a stock market prediction system using Artificial Neural Networks (ANNs) define the specific operations the system must perform to meet user and business needs. Key functionalities include the ability to ingest and preprocess real-time and historical stock data, perform feature extraction such as price trends, volume, and technical indicators, and train and evaluate neural models like LSTM or feedforward networks for accurate forecasting. The system should also support automated prediction generation, present results through interactive dashboards or visualization tools, and allow users to adjust model parameters dynamically to refine outputs. Furthermore, it must enable data storage, error logging, and backtesting to evaluate the reliability of predictions under various market conditions. These requirements are essential for delivering a responsive and data-driven prediction tool that aligns with the high volatility and rapid decision-making nature of financial markets. According to Sommerville (2016), functional requirements must clearly describe what the system should do to ensure the software fulfills its intended purpose and can be validated during testing.
+Non-functional requirements 
+I. Scalability
+The system must efficiently handle increasing volumes of real-time and historical stock market data as it grows in scope or user base. (Bass, Clements, & Kazman, 2012)
+II. Security
+Robust authentication, encryption, and secure data transmission protocols must be implemented to safeguard financial and user data. (Bass et al., 2012)
+III. User Experience (UX)
+The interface should be intuitive, visually informative, and responsive, enabling users to interact with the prediction system effectively and with minimal training. (Sommerville, 2016)
+IV. Reliability and Accuracy
+The ANN model must consistently deliver accurate predictions and function dependably under various market conditions, with ongoing model validation and error monitoring. (Sommerville, 2016)
+
+USE CASE DIAGRAM
+The Use Case Diagram for the stock market prediction system utilizing Artificial Neural Networks (ANNs) involves four primary actors: the Trader/Investor, Data Analyst, System Administrator, and an external Market Data Source. The Trader/Investor interacts with the system to generate stock predictions and visualize the prediction results through the interface. These predictions assist in making informed trading decisions. The Data Analyst is responsible for training the ANN model using historical stock data and validating the model’s accuracy by comparing predictions against actual market behavior, ensuring reliable forecasting. The System Administrator oversees user management and system configurations, ensuring the system operates efficiently and securely, managing access controls, and maintaining infrastructure stability. Meanwhile, the Market Data Source, such as APIs from stock exchanges or financial databases, feeds the system with real-time and historical market data required for analysis. These actors collectively engage with various use cases that include training the ANN model, managing data inputs, validating model performance, generating predictions, and configuring the system to align with organizational or user-specific requirements. This diagram effectively encapsulates the functional interaction between human users, external systems, and the core ANN-based prediction engine.
+
+
+Figure 1: Use case
+
+FEASABILITY  STUDY
+Economic feasibility: The development of a stock market prediction system using ANN is economically viable due to the potential to significantly reduce trading risks and enhance investment returns. Although the initial investment in data infrastructure, computing resources, and AI expertise may be high, the long-term financial benefits—such as improved prediction accuracy and reduced manual analysis costs—justify the expenditure (Albashrawi & Motiwalla, 2020).
+Technical feasibility: This system is technically feasible, as the current state of AI and deep learning provides the necessary tools for processing vast amounts of market data. Technologies like TensorFlow and PyTorch, combined with scalable cloud platforms (e.g., AWS, Google Cloud), enable real-time data processing, model training, and deployment with high computational efficiency (Goodfellow, Bengio, & Courville, 2016).
+Operational feasibility: Operationally, the system can be seamlessly integrated into the workflows of traders, analysts, and financial institutions with minimal disruption. With intuitive user interfaces and proper training, users can easily interpret predictions and make informed decisions. Furthermore, the system aligns with growing industry trends toward AI-driven analytics and decision support in finance (Jabeur, Fahmy, & Boujelbène, 2021).
+3.4.1 SYSTEM DESIGN
+ARCHITECTURAL DESIGN
+The architectural design of a stock market prediction system powered by Artificial Neural Networks (ANNs) is structured into several interdependent layers to ensure scalability, efficiency, and real-time performance. At its core lies the data ingestion layer, which continuously collects structured and unstructured financial data from various sources such as APIs, historical databases, news feeds, and social media sentiment analyzers. This data is then passed to the preprocessing layer, where it undergoes cleaning, normalization, and feature engineering to ensure it is suitable for ANN processing. The next layer is the prediction engine, which houses the trained ANN model—such as LSTM or CNN architectures—responsible for analyzing temporal patterns in the stock market data and generating future trend predictions. Surrounding this core engine is the application layer, which provides a user interface for traders, analysts, and administrators to interact with the system, view predictions, and manage inputs. Supporting the entire architecture is the infrastructure layer, consisting of cloud-based or on-premise computing environments that ensure sufficient processing power, storage, and security. This layered architectural design ensures modularity, where each component can be optimized or scaled independently, ultimately enabling accurate, fast, and reliable stock market predictions using AI.
+DETAILED DESIGN
+Component Design ;The system is built with modular, scalable, and loosely coupled components, each responsible for a specific function within the stock market prediction pipeline. 
+Database Design ;The database system is designed using a hybrid architecture that combines Relational Database Management Systems (RDBMS) for structured, transactional data and Time-Series Databases (TSDB) for continuous stock price and market feed storage.
+User Interface Design – The User Interface is a critical layer connecting the system’s backend capabilities (data processing, neural prediction, and storage) to its users. It is designed with a user-centric, responsive, and modular approach using modern frameworks like React, Angular, or Vue.js, ensuring a seamless experience across devices.
+PROTOPYING
+Prototyping is a crucial phase in the system development life cycle that involves creating a preliminary version or mock-up of the stock market prediction system using Artificial Neural Networks (ANNs) to visualize and test its design and functionality before full-scale development. This process helps stakeholders—including traders, analysts, and system administrators—interact with a simplified version of the user interface, explore system workflows, and provide feedback on usability, layout, and features. By building interactive wireframes or low-fidelity prototypes using tools like Figma, Adobe XD, or Balsamiq, developers and designers can validate core components such as the live prediction dashboard, data visualization panels, and model control features. Prototyping not only minimizes development risks and costly reworks but also ensures that the final system aligns closely with user expectations and technical requirements. It serves as an essential bridge between concept and implementation, allowing iterative refinement based on real-time feedback.
+DESIGN  SPECIFICATION
+Prototyping is a crucial phase in the system development life cycle that involves creating a preliminary version or mock-up of the stock market prediction system using Artificial Neural Networks (ANNs) to visualize and test its design and functionality before full-scale development. This process helps stakeholders—including traders, analysts, and system administrators—interact with a simplified version of the user interface, explore system workflows, and provide feedback on usability, layout, and features. By building interactive wireframes or low-fidelity prototypes using tools like Figma, Adobe XD, or Balsamiq, developers and designers can validate core components such as the live prediction dashboard, data visualization panels, and model control features. Prototyping not only minimizes development risks and costly reworks but also ensures that the final system aligns closely with user expectations and technical requirements. It serves as an essential bridge between concept and implementation, allowing iterative refinement based on real-time feedback.
+REVIEW VALIDATION
+The review process involves systematic evaluation of all system components, including the user interface, data processing pipeline, neural network models, and backend infrastructure. Stakeholders such as traders, analysts, and system administrators participate in usability testing sessions to assess the system’s navigation flow, response time, clarity of predictions, and visualizations. Technical teams also review code, architecture, and database design for efficiency, scalability, and security compliance. Peer reviews and walkthroughs help identify logical flaws, performance bottlenecks, or incomplete requirements.Validation, on the other hand, focuses on confirming that the system meets its intended purpose—delivering accurate, timely, and reliable market predictions.
+3.4 Research ethics
+Research ethics form the foundation for conducting responsible and credible research, especially when developing AI-based systems like stock market prediction tools using Artificial Neural Networks (ANNs).
+Confidentiality: any sensitive or proprietary information collected during the research (e.g., financial transactions, user trading patterns, or personal identification data) is securely stored and only accessible to authorized personnel.
+Anonymity : the identity of individuals or entities providing data is not linked to the data itself
+Informed consent : the process by which participants or data providers are clearly informed about the purpose of the research, how their data will be used, potential risks, and their right to withdraw at any time.
+                        
+
+
+
+REFERENCE
+ Aldridge, I. (2013). High-frequency trading: A practical guide to algorithmic strategies and trading systems. John Wiley & Sons.
+Atsalakis, G. S., & Valavanis, K. P. (2009). Surveying stock market forecasting techniques–Part II: Soft computing methods. Expert Systems with Applications, 36(3), 5932-5941. https://doi.org/10.1016/j.eswa.2008.07.006
+Binns, R. (2018). Fairness in machine learning: Lessons from political philosophy. Proceedings of the 2018 Conference on Fairness, Accountability, and Transparency, 149-159.
+ Bordeleau, E. (2020). Machine learning in finance: Ethical challenges. Bank of Canada Financial System Review, 49-54.
+Cath, C. (2018). Governing artificial intelligence: Ethical, legal and technical opportunities and challenges. Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences, 376(2133), 20180080.
+Chen, A. S., Leung, M. T., & Daouk, H. (2003). Application of neural networks to an emerging financial market: Forecasting and trading the Taiwan Stock Index. Computers & Operations Research, 30(6), 901-923.
+Doshi-Velez, F., & Kim, B. (2017). Towards a rigorous science of interpretable machine learning. arXiv preprint arXiv:1702.08608. https://arxiv.org/abs/1702.08608
+Fischer, T., & Krauss, C. (2018). Deep learning with long short-term memory networks for financial market predictions. European Journal of Operational Research, 270(2), 654-669. https://doi.org/10.1016/j.ejor.2017.11.054
+Gama, J., Žliobaitė, I., Bifet, A., Pechenizkiy, M., & Bouchachia, A. (2014). A survey on concept drift adaptation. ACM Computing Surveys (CSUR), 46(4), 1-37.
+Goodfellow, I., Bengio, Y., & Courville, A. (2016). Deep learning. MIT Press.
+Guidotti, R., Monreale, A., Ruggieri, S., Turini, F., Giannotti, F., & Pedreschi, D. (2018). A survey of methods for explaining black box models. ACM Computing Surveys (CSUR), 51(5), 1-42.
+Hu, Z., Zhao, Y., Khushi, M., & Tan, J. (2018). A comparative study of machine learning algorithms for predicting stock market trends. International Conference on Advanced Data Mining and Applications, 3-14.
+ Jung, D., Nyarko, Y., & Kim, S. (2021). Social media and stock market analysis: Emerging ethical issues. Journal of Business Ethics, 170(3), 529-546.
+ Kim, K. J. (2003). Financial time series forecasting using support vector machines. Neurocomputing, 55(1-2), 307-319.
+ Kumar, M., & Thenmozhi, M. (2006). Forecasting stock index movement: A comparison of support vector machines and random forests. International Journal of Intelligent Systems Technologies and Applications, 1(4), 377-386.
+Lu, J., Liu, A., Dong, F., Gu, F., Gama, J., & Zhang, G. (2019). Learning under concept drift: A review. IEEE Transactions on Knowledge and Data Engineering, 31(12), 2346-2363.
+ Nelson, D. M., Illingworth, J., & Jerram, L. (1999). Time series forecasting using neural networks: Should the data be deseasonalized first? Journal of Forecasting, 18(5), 359-367.
+Petrini, K., Pozzebon, M., & Freitas, C. (2020). Ethical challenges of AI in finance: A systematic literature review and research agenda. AI & Society, 35(3), 705-722.
+ Selvin, S., Vinayakumar, R., Gopalakrishnan, E. A., Menon, V. K., & Soman, K. P. (2017). Stock price prediction using LSTM, RNN and CNN-sliding window model. International Conference on Advances in Computing, Communications and Informatics, 1643-1647.
+Zhang, G., Eddy Patuwo, B., & Hu, M. Y. (1998). Forecasting with artificial neural networks: The state of the art. International Journal of Forecasting, 14(1), 35-62.
+Zhang, Y., Aggarwal, C. C., & Han, J. (2020). Learning dynamic loss functions for machine learning models. Proceedings of the 26th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining, 1153-1163.
+Žliobaitė, I., Pechenizkiy, M., & Gama, J. (2016). An overview of concept drift applications. Big Data Analysis: New Algorithms for a New Society, 91-114.
+
+
+
+
+APPENDICES
+
+Appendix A: Work Plan
+
+
+MAIN ACTIVITIES	SUB ACTIVITIES	DURATION	MAY	JUN	JUL
+Proposal	Chapter one	7 days						
+	Chapter two	14 days						
+	Chapter three	7 days						
+								
+Documentation								
+	Reference							
+
+Appendix B : Research Budget
+
+ITEM	QYT	COST(K.shillings)
+Laptop computer	1	20,0000
+Windows 11 operating system	1	12,000
+internet	1	3,000
+		
+		
+		
+		
+
+
+
+
+
+
+
+
+

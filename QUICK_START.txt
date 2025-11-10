@@ -1,0 +1,98 @@
+╔═══════════════════════════════════════════════════════════════╗
+║  STOCK MARKET FORECASTING SYSTEM - QUICK START GUIDE         ║
+║  With User Authentication & Email Verification                ║
+╚═══════════════════════════════════════════════════════════════╝
+
+🚀 FIRST TIME SETUP (ONE TIME ONLY)
+════════════════════════════════════════════════════════════════
+
+1. Edit .env file with your email:
+   
+   notepad .env
+   
+   Change these lines:
+   SENDER_EMAIL=your-email@gmail.com
+   SENDER_PASSWORD=xxxx-xxxx-xxxx-xxxx
+   
+   (Get app password from: https://myaccount.google.com/apppasswords)
+
+2. Run the app:
+   
+   venv\Scripts\streamlit run app.py
+
+
+📝 CREATE ACCOUNT
+════════════════════════════════════════════════════════════════
+
+1. Click "Create Account" button
+2. Enter:
+   - Full Name: Joseph Muiruri
+   - Email: your-email@gmail.com  
+   - Password: (minimum 6 characters)
+   - Confirm Password
+3. Click "Register"
+4. CHECK YOUR EMAIL for 6-digit code
+5. Enter code on verification page
+6. Done! Now login
+
+
+🔐 LOGIN
+════════════════════════════════════════════════════════════════
+
+1. Enter email and password
+2. Click "Login"
+3. Access the dashboard!
+
+
+💡 IMPORTANT NOTES
+════════════════════════════════════════════════════════════════
+
+✅ Email verification code expires in 10 minutes
+✅ If email doesn't work, code will show on screen
+✅ Password must be at least 6 characters
+✅ Each user needs unique email address
+
+
+🛠️ SYSTEM FEATURES
+════════════════════════════════════════════════════════════════
+
+After Login, you can:
+  📊 Data Collection    - Fetch stock data
+  🔧 Model Training     - Train ANN/LSTM models
+  📈 Predictions        - View forecasts
+  📋 Reports            - See evaluation results
+
+
+⚡ QUICK COMMANDS
+════════════════════════════════════════════════════════════════
+
+Run Dashboard:       venv\Scripts\streamlit run app.py
+Run CLI Menu:        venv\Scripts\python main.py
+Reset Database:      del users.db
+Edit Email Config:   notepad .env
+
+
+📄 NEED HELP?
+════════════════════════════════════════════════════════════════
+
+Read these files:
+  ► AUTHENTICATION_README.md  (Quick start)
+  ► EMAIL_SETUP.md            (Email config guide)
+  ► WHATS_NEW.md              (Feature overview)
+
+
+🎓 FOR YOUR PROJECT
+════════════════════════════════════════════════════════════════
+
+Demonstrates:
+  ✅ User authentication system
+  ✅ Email verification integration
+  ✅ Database design (SQLite)
+  ✅ Security (password hashing)
+  ✅ Session management
+  ✅ Real-world functionality
+
+
+═══════════════════════════════════════════════════════════════
+READY TO START? Run: venv\Scripts\streamlit run app.py
+═══════════════════════════════════════════════════════════════

@@ -1,0 +1,64 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# Node modules (projo frontend)
+projo/frontend/node_modules/
+node_modules/
+
+# Data files
+data/raw/*.csv
+data/processed/*.npy
+*.pkl
+*.pickle
+
+# Model files
+models/*.h5
+models/*.keras
+models/*.pb
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*.ipynb
+
+# Environment variables
+.env
+
+# Database (contains user passwords!)
+users.db
+*.db
+*.sqlite
+*.sqlite3
+
+# Cache
+yfinance.cache
+.pytest_cache/
+*.cache
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Reports
+reports/*.png
+reports/*.txt
+reports/*.pdf
+
+# Logs
+*.log
+logs/
