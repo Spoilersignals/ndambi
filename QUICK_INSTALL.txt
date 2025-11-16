@@ -1,0 +1,75 @@
+═══════════════════════════════════════════════════════════════
+  NDAMBI STOCK MARKET FORECASTING - QUICK INSTALLATION
+═══════════════════════════════════════════════════════════════
+
+📋 PREREQUISITES:
+✓ Python 3.8+    → https://www.python.org/downloads/
+✓ Git            → https://git-scm.com/downloads/
+
+═══════════════════════════════════════════════════════════════
+
+🚀 INSTALLATION STEPS (5 MINUTES):
+
+1️⃣  CLONE PROJECT
+   git clone https://github.com/Spoilersignals/ndambi.git
+   cd ndambi
+
+2️⃣  CREATE VIRTUAL ENVIRONMENT
+   python -m venv venv
+   
+   Windows:  venv\Scripts\activate
+   Mac/Linux: source venv/bin/activate
+
+3️⃣  INSTALL DEPENDENCIES
+   pip install -r requirements.txt
+   python -c "import nltk; nltk.download('punkt'); nltk.download('brown')"
+
+4️⃣  RUN THE SYSTEM
+   python main.py          (CLI Menu)
+   OR
+   streamlit run app.py    (Web Dashboard)
+
+═══════════════════════════════════════════════════════════════
+
+🎯 FIRST TIME USAGE:
+
+A) Using CLI Menu (python main.py):
+   1 → Collect Stock Data (enter: AAPL)
+   2 → Preprocess Data
+   3 → Train ANN Model
+   5 → Evaluate ANN Model
+   8 → Launch Dashboard
+
+B) Using Streamlit Dashboard (streamlit run app.py):
+   - Create account & login
+   - Go to "Data Collection" page
+   - Enter stock symbol (AAPL) & fetch data
+   - Go to "Model Training" to train
+   - View predictions and reports
+
+═══════════════════════════════════════════════════════════════
+
+📊 DATA COLLECTION RANGE:
+   Default: 2019-01-01 to Today (2025-11-16)
+   Includes: COVID crash, recovery, and 2025 trends
+
+═══════════════════════════════════════════════════════════════
+
+❗ TROUBLESHOOTING:
+
+Problem: Module not found
+Fix: pip install -r requirements.txt
+
+Problem: TensorFlow error
+Fix: pip install tensorflow-cpu
+
+Problem: Streamlit won't open
+Fix: Manually go to http://localhost:8501
+
+═══════════════════════════════════════════════════════════════
+
+📁 PROJECT: https://github.com/Spoilersignals/ndambi
+📚 FULL GUIDE: See INSTALLATION_GUIDE.md
+👤 AUTHOR: Ndabi Joseph Muiruri - Kabarak University
+
+═══════════════════════════════════════════════════════════════
