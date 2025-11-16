@@ -104,9 +104,9 @@ class DataCollector:
     
     def collect_all_data(self, start_date=None, end_date=None):
         if start_date is None:
-            start_date = (datetime.now() - timedelta(days=365*5)).strftime('%Y-%m-%d')
+            start_date = '2019-01-01'  # Start from 2019 for sufficient training data
         if end_date is None:
-            end_date = datetime.now().strftime('%Y-%m-%d')
+            end_date = datetime.now().strftime('%Y-%m-%d')  # Up to today (2025)
         
         stock_data = self.fetch_stock_data(start_date, end_date)
         

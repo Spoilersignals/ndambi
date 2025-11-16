@@ -18,8 +18,122 @@ load_dotenv()
 st.set_page_config(
     page_title="Stock Market Forecasting System",
     page_icon="📈",
-    layout="wide"
+    layout="wide",
+    initial_sidebar_state="expanded"
 )
+
+# Custom CSS for clean, professional styling
+st.markdown("""
+<style>
+    /* Main background - clean gradient */
+    .stApp {
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    }
+    
+    /* Sidebar styling */
+    [data-testid="stSidebar"] {
+        background: linear-gradient(180deg, #2c3e50 0%, #34495e 100%);
+    }
+    
+    [data-testid="stSidebar"] * {
+        color: white !important;
+    }
+    
+    /* Metric cards */
+    [data-testid="stMetricValue"] {
+        font-size: 24px;
+        font-weight: 600;
+        color: #0ea5e9;
+    }
+    
+    /* Headers - compact */
+    h1 {
+        color: #1e293b !important;
+        font-weight: 700 !important;
+        font-size: 2rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    h2 {
+        color: #334155 !important;
+        font-weight: 600 !important;
+        font-size: 1.5rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    h3 {
+        color: #475569 !important;
+        font-weight: 600 !important;
+        font-size: 1.25rem !important;
+    }
+    
+    /* Buttons - professional look */
+    .stButton>button {
+        background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 8px 20px;
+        font-weight: 500;
+        transition: all 0.2s ease;
+        box-shadow: 0 2px 8px rgba(14, 165, 233, 0.3);
+    }
+    
+    .stButton>button:hover {
+        background: linear-gradient(135deg, #0284c7 0%, #0891b2 100%);
+        box-shadow: 0 4px 12px rgba(14, 165, 233, 0.4);
+    }
+    
+    /* Input fields - cleaner */
+    .stTextInput>div>div>input, .stDateInput>div>div>input, .stNumberInput>div>div>input {
+        border-radius: 6px;
+        border: 1px solid #cbd5e1;
+        padding: 8px 12px;
+        font-size: 0.95rem;
+    }
+    
+    .stTextInput>div>div>input:focus, .stDateInput>div>div>input:focus {
+        border-color: #0ea5e9;
+        box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.1);
+    }
+    
+    /* Success/Error messages */
+    .stSuccess {
+        background-color: #10b981;
+        border-radius: 6px;
+        padding: 12px;
+        color: white;
+    }
+    
+    .stError {
+        background-color: #ef4444;
+        border-radius: 6px;
+        padding: 12px;
+        color: white;
+    }
+    
+    /* Divider */
+    hr {
+        border: none;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #cbd5e1, transparent);
+        margin: 1.5rem 0;
+    }
+    
+    /* Dataframe styling */
+    .dataframe {
+        border-radius: 6px;
+        overflow: hidden;
+        font-size: 0.9rem;
+    }
+    
+    /* Reduce spacing */
+    .block-container {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+</style>
+""", unsafe_allow_html=True)
 
 # Initialize session state
 if 'authenticated' not in st.session_state:
@@ -50,19 +164,26 @@ def load_training_history(model_type):
 
 def login_page():
     """Login page"""
-    st.title("🔐 Login to Stock Market Forecasting System")
+    st.markdown('<div style="text-align: center; margin-bottom: 1rem;">', unsafe_allow_html=True)
+    st.title("🔐 Stock Market Forecasting")
+    st.markdown('<p style="color: #475569; font-size: 1rem;">Sign in to your account</p>', unsafe_allow_html=True)
+    st.markdown('</div>', unsafe_allow_html=True)
     st.markdown("---")
     
     col1, col2, col3 = st.columns([1, 2, 1])
     
     with col2:
-        email = st.text_input("📧 Email", key="login_email")
-        password = st.text_input("🔒 Password", type="password", key="login_password")
+        st.markdown('<div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">', unsafe_allow_html=True)
+        
+        email = st.text_input("📧 Email Address", key="login_email", placeholder="your.email@example.com")
+        password = st.text_input("🔒 Password", type="password", key="login_password", placeholder="Enter your password")
+        
+        st.markdown("<br>", unsafe_allow_html=True)
         
         col_btn1, col_btn2 = st.columns(2)
         
         with col_btn1:
-            if st.button("🚀 Login", type="primary", use_container_width=True):
+            if st.button("🚀 Sign In", type="primary", use_container_width=True):
                 if email and password:
                     success, message, user_data = auth_manager.login(email, password)
                     
@@ -80,19 +201,28 @@ def login_page():
             if st.button("📝 Create Account", use_container_width=True):
                 st.session_state.auth_step = 'register'
                 st.experimental_rerun()
+        
+        st.markdown('</div>', unsafe_allow_html=True)
 
 def register_page():
     """Registration page"""
-    st.title("📝 Create New Account")
+    st.markdown('<div style="text-align: center; margin-bottom: 1rem;">', unsafe_allow_html=True)
+    st.title("📝 Create Account")
+    st.markdown('<p style="color: #475569; font-size: 1rem;">Join to start forecasting</p>', unsafe_allow_html=True)
+    st.markdown('</div>', unsafe_allow_html=True)
     st.markdown("---")
     
     col1, col2, col3 = st.columns([1, 2, 1])
     
     with col2:
+        st.markdown('<div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">', unsafe_allow_html=True)
+        
         full_name = st.text_input("👤 Full Name", key="reg_name", placeholder="Joseph Muiruri")
-        email = st.text_input("📧 Email", key="reg_email", placeholder="your-email@gmail.com")
+        email = st.text_input("📧 Email Address", key="reg_email", placeholder="your-email@gmail.com")
         password = st.text_input("🔒 Password", type="password", key="reg_password", placeholder="Minimum 6 characters")
         password_confirm = st.text_input("🔒 Confirm Password", type="password", key="reg_password_confirm", placeholder="Re-enter password")
+        
+        st.markdown("<br>", unsafe_allow_html=True)
         
         col_btn1, col_btn2 = st.columns(2)
         
@@ -131,18 +261,28 @@ def register_page():
             if st.button("🔙 Back to Login", use_container_width=True):
                 st.session_state.auth_step = 'login'
                 st.experimental_rerun()
+        
+        st.markdown('</div>', unsafe_allow_html=True)
 
 def verify_email_page():
     """Email verification page"""
+    st.markdown('<div style="text-align: center; margin-bottom: 1rem;">', unsafe_allow_html=True)
     st.title("✉️ Verify Your Email")
+    st.markdown('<p style="color: #475569; font-size: 1rem;">Enter the code sent to your inbox</p>', unsafe_allow_html=True)
+    st.markdown('</div>', unsafe_allow_html=True)
     st.markdown("---")
     
     col1, col2, col3 = st.columns([1, 2, 1])
     
     with col2:
-        st.info(f"A verification code has been sent to **{st.session_state.pending_email}**")
+        st.markdown('<div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">', unsafe_allow_html=True)
         
-        code = st.text_input("🔢 Enter 6-Digit Verification Code", max_chars=6, key="verify_code")
+        st.info(f"📧 A verification code has been sent to **{st.session_state.pending_email}**")
+        
+        st.markdown("<br>", unsafe_allow_html=True)
+        code = st.text_input("🔢 Enter 6-Digit Verification Code", max_chars=6, key="verify_code", placeholder="000000")
+        
+        st.markdown("<br>", unsafe_allow_html=True)
         
         col_btn1, col_btn2 = st.columns(2)
         
@@ -166,6 +306,8 @@ def verify_email_page():
             if st.button("🔙 Back to Login", use_container_width=True):
                 st.session_state.auth_step = 'login'
                 st.experimental_rerun()
+        
+        st.markdown('</div>', unsafe_allow_html=True)
 
 def main():
     # Check authentication
@@ -179,8 +321,10 @@ def main():
         return
     
     # Authenticated user interface
-    st.title("📈 Stock Market Forecasting System Using ANNs")
-    st.markdown(f"👤 Welcome, **{st.session_state.user_data['full_name']}**")
+    st.markdown('<div style="margin-bottom: 1rem;">', unsafe_allow_html=True)
+    st.title("📈 Stock Market Forecasting Dashboard")
+    st.markdown(f'<p style="color: #64748b; font-size: 0.95rem;">Welcome, <strong>{st.session_state.user_data["full_name"]}</strong></p>', unsafe_allow_html=True)
+    st.markdown('</div>', unsafe_allow_html=True)
     st.markdown("---")
     
     st.sidebar.header("⚙️ Configuration")
@@ -209,8 +353,11 @@ def main():
         reports_page()
 
 def data_collection_page():
-    st.header("📊 Data Collection Module")
+    st.markdown('<div style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); margin-bottom: 1rem;">', unsafe_allow_html=True)
+    st.header("📊 Data Collection")
+    st.markdown('</div>', unsafe_allow_html=True)
     
+    st.markdown('<div style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">', unsafe_allow_html=True)
     col1, col2 = st.columns(2)
     
     with col1:
@@ -218,7 +365,7 @@ def data_collection_page():
         start_date = st.date_input("Start Date", value=pd.to_datetime("2019-01-01"))
     
     with col2:
-        end_date = st.date_input("End Date", value=pd.to_datetime("today"))
+        end_date = st.date_input("End Date", value=pd.to_datetime("today"), max_value=pd.to_datetime("2025-12-31"))
     
     if st.button("🚀 Fetch Data", type="primary"):
         with st.spinner(f"Fetching data for {symbol}..."):
@@ -251,7 +398,10 @@ def data_collection_page():
                     xaxis_title="Date",
                     yaxis_title="Price (USD)",
                     hovermode='x unified',
-                    template='plotly_white'
+                    template='plotly_white',
+                    paper_bgcolor='rgba(0,0,0,0)',
+                    plot_bgcolor='rgba(0,0,0,0)',
+                    font=dict(size=12, color='#1e3a8a')
                 )
                 
                 st.plotly_chart(fig, use_container_width=True)
@@ -270,10 +420,15 @@ def data_collection_page():
         col2.metric("Latest Price", f"${data['Close'].iloc[-1]:.2f}")
         col3.metric("Avg Price", f"${data['Close'].mean():.2f}")
         col4.metric("Volatility", f"{data['Close'].std():.2f}")
+    
+    st.markdown('</div>', unsafe_allow_html=True)
 
 def model_training_page():
+    st.markdown('<div style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); margin-bottom: 1rem;">', unsafe_allow_html=True)
     st.header("🔧 Model Training")
+    st.markdown('</div>', unsafe_allow_html=True)
     
+    st.markdown('<div style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">', unsafe_allow_html=True)
     model_type = st.selectbox("Select Model Type", ["ANN (Feedforward)", "LSTM (Recurrent)"])
     
     col1, col2, col3 = st.columns(3)
@@ -362,10 +517,15 @@ def model_training_page():
             cols[i].metric(metric, f"{value:.6f}")
     else:
         st.info("ℹ️ No training history found. Train a model first.")
+    
+    st.markdown('</div>', unsafe_allow_html=True)
 
 def predictions_page():
-    st.header("📈 Stock Price Predictions")
+    st.markdown('<div style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); margin-bottom: 1rem;">', unsafe_allow_html=True)
+    st.header("📈 Predictions")
+    st.markdown('</div>', unsafe_allow_html=True)
     
+    st.markdown('<div style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">', unsafe_allow_html=True)
     model_type = st.selectbox("Select Model", ["ANN", "LSTM"])
     
     model_file = os.path.join(
@@ -437,10 +597,15 @@ def predictions_page():
                     st.error(f"❌ Error: {str(e)}")
     else:
         st.warning(f"⚠️ {model_type} model not found. Train the model first.")
+    
+    st.markdown('</div>', unsafe_allow_html=True)
 
 def reports_page():
-    st.header("📋 Evaluation Reports")
+    st.markdown('<div style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); margin-bottom: 1rem;">', unsafe_allow_html=True)
+    st.header("📋 Reports")
+    st.markdown('</div>', unsafe_allow_html=True)
     
+    st.markdown('<div style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">', unsafe_allow_html=True)
     reports_dir = Config.REPORTS_DIR
     
     if os.path.exists(reports_dir):
@@ -477,6 +642,8 @@ def reports_page():
             st.info("ℹ️ No visualization images found. Run model evaluation first.")
     else:
         st.warning("⚠️ Reports directory not found.")
+    
+    st.markdown('</div>', unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main()
